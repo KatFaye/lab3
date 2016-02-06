@@ -4,18 +4,18 @@
 
 #include <string>
 
-#ifndef _BANKACCOUNT_H_
-#define _BANKACCOUNT_H_
+#ifndef BANKACCOUNT_H
+#define BANKACCOUNT_H
 
 class BankAccount {
 public:
-	BankAccount(int balance = 0);
+	BankAccount(int balance = 0, int minimumBalance = 100, double pirateRate = 15);
 	int getBalance();
 	void setBalance(int);
-	void setMinimumBalance(int);
-	void setPirateRate(double);
 	int getMinimumBalance();
+	void setMinimumBalance(int);
 	double getPirateRate();
+	void setPirateRate(double);
 	virtual void print() const = 0; //makes this an abstract class
 
 private:
