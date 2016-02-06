@@ -3,12 +3,15 @@
 //Authors: Kat Herring and Kate Barlock
 
 #include "BankAccount.h"
+using namespace std;
 
 #ifndef _CHECKINGACCOUNT_H_
 #define _CHECKINGACCOUNT_H_
 
 class CheckingAccount : public BankAccount {
+	
 public:
+	CheckingAccount();
 	void setAccountHolder(string);
 	string getAccountHolder();
 	void setCrewAffiliation(string);

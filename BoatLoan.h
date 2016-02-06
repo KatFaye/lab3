@@ -9,6 +9,7 @@
 
 class BoatLoan : public BankAccount {
 public:
+	BoatLoan(int maxLootStorage = 100000, int numOfCannons = 20, string boatName = "The Flying Dutchman");
 	int getMaxLootStorage();
 	void setMaxLootStorage(int);
 	int getNumOfCannons();
