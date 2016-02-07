@@ -15,5 +15,13 @@ int main(void) {
 	c1.print();
 	c1.deposit(500); //test that deposit function works
 	c1.print();
+
+	//test boat loan
+	BoatLoan b1;
+	b1.print(); //print account status
+	b1.printLoanTable(); //print out loan table (currnet balance, payment, interest over every month of loan)
+	b1.deposit(500); //demonstrate deposit ability
+	b1.print(); //print account status
+
 	return 0;
 }

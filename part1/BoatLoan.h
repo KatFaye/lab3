@@ -10,7 +10,10 @@
 class BoatLoan : public BankAccount {
 
 public:
-	BoatLoan(int maxLootStorage = 100000, int numOfCannons = 20, string boatName = "The Flying Dutchman", int Payment = 500, int balance = 10000, double pirateRate = 15, int paymentSchedule = 1);
+	BoatLoan(int balance = 10000, int paymentSchedule = 1, int minimumBalance = 100, double pirateRate = 15, int maxLootStorage = 2000, int numOfCannons = 20, string boatName = "The Flying Dutchman", double Payment = 500);
+	virtual void print(); //prints status of boat, crew, and account
+	virtual void deposit(int Deposit); //put money towards paying off loan (besides regular payment)
+	void printLoanTable();
 	int getMaxLootStorage();
 	void setMaxLootStorage(int maxlootstorage);
 	int getNumOfCannons();
@@ -19,12 +22,9 @@ public:
 	void setBoatName(string boatname);
 	void setPayment(int payment);
 	
-	virtual void print(); //prints status of boat, crew, and account
-	
 private:
-	void calcRemainingMonths(); //calculate months until boat is paid off
-	void makeLoanTable(); //print out loan summary table
-	int Payment; //normal payment (in dubloons)
+	void calcRemainingMonths();
+	double Payment; //normal payment (in dubloons)
 	int numberofMonths; //remaining months until boat is paid off
 	int maxLootStorage; //in sqft
 	int numOfCannons; //number of cannons on loaned ship
