@@ -4,27 +4,17 @@
 
 #include "BankAccount.h"
 #include <iostream>
+#include <cmath>
  
 using namespace std; //adding this fixed the string problems
 
-BankAccount::BankAccount(int newBal, int paySchedule, int lastPay, int minBal, double newRate) { //constructor. make/initialize new bank account class object
+BankAccount::BankAccount(int newBal, int paySchedule, int minBal, double newRate) { //constructor. make/initialize new bank account class object
 
 	//initialize account
 	setPaySchedule(paySchedule);
 	setMinimumBalance(minBal);
 	setPirateRate(newRate);
 	setBalance(newBal);
-	setLastPaid(lastPay);
-
-}
-int BankAccount::getLastPaid() {
-	return lastPaid;
-}
-void BankAccount::setLastPaid(int lastPay) {
-	if(lastPay==0) {
-		cout << "Input current date as an integer of the form mmddyyyy." << endl;
-		cin >> lastPay;
-	}
 }
 void BankAccount::setPaySchedule(int paySchedule) {
 	//error checking
@@ -86,8 +76,4 @@ void BankAccount::setPirateRate(double newRate){ //set pirateRate variable of Ba
 }
 int BankAccount::nextPayment() {
 	return balance*pirateRate/100; //insurance rate
-}
-int BankAccount::nextPayDate() { //next day a payment is due
-
-	return 0;
 }
