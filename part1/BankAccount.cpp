@@ -74,6 +74,4 @@ void BankAccount::setPirateRate(double newRate){ //set pirateRate variable of Ba
 	pirateRate = newRate; //how much of your balance Blackbeard takes for security reasons; quarterly charge
 
 }
-int BankAccount::nextPayment() {
-	return balance*pirateRate/100; //insurance rate
-}
+

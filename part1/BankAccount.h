@@ -27,8 +27,6 @@ public:
 	int getLastPaid();
 	void setLastPaid(int);
 
-	int nextPayment(); //amount due at next payment date (in dubloons)
-	void nextPayDate(); //next day a payment is due
 	virtual void deposit(int) = 0; // credit money to account
 	virtual void print() = 0; //makes this an abstract class
 

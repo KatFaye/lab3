@@ -14,8 +14,11 @@ public:
 	CheckingAccount(string, string, int);
 	void setAccountHolder(string);
 	string getAccountHolder();
+
 	void setCrewAffiliation(string);
 	string getCrewAffiliation();
+
+	int nextPayment(); //amount due at next payment date (in dubloons)
 	virtual void deposit(int); // credit money to account
 	virtual void print(); //print the account and user status
 

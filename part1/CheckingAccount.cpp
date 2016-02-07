@@ -48,3 +48,6 @@ void CheckingAccount::deposit(int addBal) {
 	temp = getBalance() + addBal;
 	setBalance(temp);
 }
+int CheckingAccount::nextPayment() {
+	return getBalance()*getPirateRate()/100; //insurance rate
+}
