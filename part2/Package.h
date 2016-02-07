@@ -3,10 +3,12 @@
 // class definition for Package used by shipping companies
 
 #include <string>
+#include <iostream>
 
 class Package {
 
 public:
+	Package();
 
 private:
 	string name;
