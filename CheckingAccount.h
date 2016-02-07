@@ -11,7 +11,7 @@ using namespace std;
 class CheckingAccount : public BankAccount {
 	
 public:
-	CheckingAccount();
+	CheckingAccount(string, string, int);
 	void setAccountHolder(string);
 	string getAccountHolder();
 	void setCrewAffiliation(string);
@@ -19,6 +19,7 @@ public:
 	virtual void print(); //print the account and user status
 
 private:
+	int nextInsurancePayment(); //amount due at next payment date (in dubloons)
 	string accountHolder;
 	string crewAffiliation; //pirates member associated with
 

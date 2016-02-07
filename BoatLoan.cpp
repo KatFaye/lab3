@@ -4,57 +4,57 @@
 
 #include "BoatLoan.h"
 
-	BoatLoan::BoatLoan(int newLootMax, int numCan, string newName){
+BoatLoan::BoatLoan(int newLootMax, int numCan, string newName){
 
-		//initialize boat loan
-		setMaxLootStorage(newLootMax);
-		setNumOfCannons(numCan);
-		setBoatName(newName);
+	//initialize boat loan
+	setMaxLootStorage(newLootMax);
+	setNumOfCannons(numCan);
+	setBoatName(newName);
 
-	}
+}
 
-	int BoatLoan::getMaxLootStorage(){
+int BoatLoan::getMaxLootStorage(){
 
-		return maxLootStorage;
+	return maxLootStorage;
 
-	}
+}
 
-	void BoatLoan::setMaxLootStorage(int newLootMax){
+void BoatLoan::setMaxLootStorage(int newLootMax){
 
-		//error checking
+	//error checking
 
-		//set loot max
-		maxLootStorage = newLootMax;
+	//set loot max
+	maxLootStorage = newLootMax;
 
-	}
+}
 
-	int BoatLoan::getNumOfCannons(){
+int BoatLoan::getNumOfCannons(){
 
-		return numOfCannons;
+	return numOfCannons;
 
-	}
+}
 
-	void BoatLoan::setNumOfCannons(int numCan){
+void BoatLoan::setNumOfCannons(int numCan){
 
-		//error checking
+	//error checking
 
-		//set cannons
-		numOfCannons = numCan;
+	//set cannons
+	numOfCannons = numCan;
 
-	}
+}
 
-	string BoatLoan::getBoatName(){
+string BoatLoan::getBoatName(){
 
-		return boatName;
+	return boatName;
 
-	}
+}
 
-	void BoatLoan::setBoatName(string newName){
+void BoatLoan::setBoatName(string newName){
+	//error checking?
 
-		//error checking?
-
-		//set boat name
-		boatName = newName;
-
-	}
-
+	//set boat name
+	boatName = newName;
+}
+void BoatLoan::print() {
+	//make non-virtual
+}

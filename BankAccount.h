@@ -7,6 +7,8 @@
 #ifndef BANKACCOUNT_H
 #define BANKACCOUNT_H
 
+using namespace std;
+
 class BankAccount {
 public:
 	BankAccount(int balance = 0, int minimumBalance = 100, double pirateRate = 15);
@@ -16,7 +18,7 @@ public:
 	void setMinimumBalance(int);
 	double getPirateRate();
 	void setPirateRate(double);
-	virtual void print() const = 0; //makes this an abstract class
+	virtual void print() = 0; //makes this an abstract class
 
 private:
 	int balance; //balance of account; recorded in dubloons
