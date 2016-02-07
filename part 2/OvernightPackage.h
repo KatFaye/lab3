@@ -1,7 +1,7 @@
 //OvernightPackage class definition
 // Kat Herring and Kate Barlock
 
-class OvernightPackage{
+class OvernightPackage : public Package {
 
 public:
 	OvernightPackage();
