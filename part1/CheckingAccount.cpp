@@ -40,7 +40,7 @@ void CheckingAccount::print() { //print the account and user status
 	cout << "==============" << endl;
 	cout << "Current Balance: " << getBalance() << endl;
 	cout << "Upcoming insurance and maintenace fee: " << nextPayment() << endl;
-	cout << "Next Payment Date:";
+	cout << "Next insurance payment due in " << getPaymentSchedule() << " month(s).\n" << endl;
 
 }
 void CheckingAccount::deposit(int addBal) {
