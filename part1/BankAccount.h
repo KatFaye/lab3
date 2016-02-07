@@ -19,7 +19,7 @@ public:
 	double getPirateRate();
 	void setPirateRate(double);
 	int getPaymentSchedule();
-	void setPaymentSchedule(int);
+	void setPaySchedule(int);
 	virtual void print() = 0; //makes this an abstract class
 
 private:
