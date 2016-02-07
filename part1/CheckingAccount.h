@@ -16,10 +16,11 @@ public:
 	string getAccountHolder();
 	void setCrewAffiliation(string);
 	string getCrewAffiliation();
+	virtual void deposit(int); // credit money to account
 	virtual void print(); //print the account and user status
 
 private:
-	int nextInsurancePayment(); //amount due at next payment date (in dubloons)
+
 	string accountHolder;
 	string crewAffiliation; //pirates member associated with
 

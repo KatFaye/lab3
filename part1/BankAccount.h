@@ -11,18 +11,29 @@ using namespace std;
 
 class BankAccount {
 public:
-	BankAccount(int balance = 0, int paymentSchedule = 1, int minimumBalance = 100, double pirateRate = 15);
+	BankAccount(int balance = 0, int paymentSchedule = 1, int lastPaid = 0, int minimumBalance = 100, double pirateRate = 15);
 	int getBalance();
 	void setBalance(int);
+
 	int getMinimumBalance();
 	void setMinimumBalance(int);
+
 	double getPirateRate();
 	void setPirateRate(double);
+
 	int getPaymentSchedule();
 	void setPaySchedule(int);
+
+	int getLastPaid();
+	void setLastPaid(int);
+
+	int nextPayment(); //amount due at next payment date (in dubloons)
+	int nextPayDate(); //next day a payment is due
+	virtual void deposit(int) = 0; // credit money to account
 	virtual void print() = 0; //makes this an abstract class
 
 private:
+	int lastPaid; //day of last payment in format mmddyyyy
 	int balance; //balance of account; recorded in dubloons
 	int minimumBalance; //dubloons
 	double pirateRate; //how much of your balance Blackbeard takes for security reasons

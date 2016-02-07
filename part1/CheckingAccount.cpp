@@ -35,14 +35,16 @@ void CheckingAccount::setCrewAffiliation(string crewName){
 
 	crewAffiliation = crewName;
 }
-int CheckingAccount::nextInsurancePayment() {
-	return getBalance()*getPirateRate()/100; //insurance rate
-}
 void CheckingAccount::print() { //print the account and user status
 	cout << "Account Summary for " << accountHolder << ":" << endl;
 	cout << "==============" << endl;
 	cout << "Current Balance: " << getBalance() << endl;
-	cout << "Upcoming insurance and maintenace fee: " << nextInsurancePayment() << endl;
-	cout << "Next Payment Date:"
+	cout << "Upcoming insurance and maintenace fee: " << nextPayment() << endl;
+	cout << "Next Payment Date:";
 
+}
+void CheckingAccount::deposit(int addBal) {
+	int temp;
+	temp = getBalance() + addBal;
+	setBalance(temp);
 }
