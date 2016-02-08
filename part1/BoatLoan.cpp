@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <iostream>
 
-BoatLoan::BoatLoan(int bal, int paySched, double pirRate, int newLootMax, int numCan, string newName, double payment) : BankAccount(bal, paySched, pirRate) {
+BoatLoan::BoatLoan(int bal, int paySched, int pirRate, int newLootMax, int numCan, string newName, int payment) : BankAccount(bal, paySched, pirRate) {
 
 	//initialize boat loan
 	setMaxLootStorage(newLootMax);
@@ -19,47 +19,45 @@ BoatLoan::BoatLoan(int bal, int paySched, double pirRate, int newLootMax, int nu
 
 void BoatLoan::printLoanTable(){
 
-	int month = 1, savePayment; //intialize month counter, payment amount retainer
+	int month = 0, savePayment; //intialize month counter, payment amount retainer
 	int bal = getBalance(); //access private data
-	double rate = getPirateRate(); //access private data
+	int rate = getPirateRate(); //access private data
 	int payFreq = getPaymentSchedule(); //access private data
 
 	cout << endl << boatName << "'s Boat Loan Table:" << endl << "==============" << endl;
 
-	cout << "Month      Payment      Interest      Balance" << endl; //display table header
+	cout << "Month    Payment    Interest        Balance" << endl; //display table header
 
 	while (bal > 0) { //while boat loan has not been paid off
 
-	    double interest = bal * rate/(1200/payFreq); //calculate interest (based on yearly frequency of Payment)
+	    int interest = bal * rate/(1200/payFreq); //calculate interest (based on yearly frequency of Payment)
 	    bal += interest; //add interest to principal
 
 	    if (bal > Payment) { // if boatLoan is ongoing 
 	    	bal -= Payment; //calculate new balance
-	    	month+= payFreq; //increase month counter
 	    } else { //calculate final Payment info
 	    	savePayment = Payment; //save value of payment
 	        Payment = bal; //calculate final Payment
 	        bal -= Payment; //bring balance to 0
 	    }
+	    month+= payFreq; //increase month counter
 	    //print table row
-		cout << fixed << setprecision(2) << setw(3) << month << setw(14) << Payment << setw(12) << interest << setw(16) << bal << endl; //print results    
+		cout << setw(3) << month << setw(10) << Payment << setw(12) << interest << setw(16) << bal << endl; //print results    
 	}
 	numberofMonths = month;
 	Payment = savePayment; //reinstate original payment amount  
-	//setBalance(bal); //update BoatLoan balance !!! (can put back in after talking to Kat about BankAccount (see note))
 }
-
 
 void BoatLoan::calcRemainingMonths(){
 
 	int month = 1; //intialize month counter
 	int bal = getBalance(); //access private data
-	double rate = getPirateRate(); //access private data
+	int rate = getPirateRate(); //access private data
 	int payFreq = getPaymentSchedule(); //access private data
 
 	while (bal > 0) { //while boat loan has not been paid off
 
-	    double interest = bal * rate/(1200/payFreq); //calculate interest (based on yearly frequency of Payment)
+	    int interest = bal * rate/(1200/payFreq); //calculate interest (based on yearly frequency of Payment)
 	    bal += interest; //add interest to principal
 	    if (bal > Payment) { // if boatLoan is ongoing 
 	    	bal -= Payment; //calculate new balance
