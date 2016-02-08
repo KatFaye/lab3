@@ -13,7 +13,7 @@ class Package {
 
 public:
 	Package(string newName = "empty", int zipcode = 46556, double weight = 20.0, double costPerOunce = 1.25);
-	double CalculateCost();
+	virtual double CalculateCost();
 	void print();
 	void setCost(double costPerOunce);
 	void setWeight(double weight);
