@@ -10,7 +10,7 @@ CheckingAccount::CheckingAccount(string accountName, string crewName, int newBal
 	setAccountHolder(accountName);
 	setCrewAffiliation(crewName);
 	//ensure that starting balance meets minimum balance requirement
-	while(newBal < minimumBalance){ 
+	while(newBal < minBal){ 
 		cout << "Error: Insufficient funds to open an account with Blackbeard" << endl; //output error message
 		cout << "Please enter a new balance: "; // ask for valid balance
 		cin >> newBal; //read in new balance
