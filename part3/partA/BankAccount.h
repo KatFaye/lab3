@@ -24,11 +24,8 @@ public:
 	int getPaymentSchedule();
 	void setPaySchedule(int);
 
-	int getLastPaid();
-	void setLastPaid(int);
-
-	virtual void deposit(int) = 0; // credit money to account
-	virtual void print() = 0; //makes this an abstract class
+	void deposit(int); // credit money to account
+	void print(); //makes this an abstract class
 
 private:
 	int balance; //balance of account; recorded in dubloons

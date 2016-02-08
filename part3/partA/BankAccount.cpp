@@ -33,8 +33,6 @@ void BankAccount::setBalance(int newBal){ //set account balance
 
 }
 
-
-
 double BankAccount::getPirateRate(){ //return pirateRate
 
 	return pirateRate;

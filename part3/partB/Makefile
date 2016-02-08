@@ -1,8 +1,8 @@
 CMP = g++
 MAIN = main
-CLASS = BankAccount
-CLASS2 = CheckingAccount
-CLASS3 = BoatLoan
+CLASS = Package
+CLASS2 = OvernightPackage
+CLASS3 = TwoDayPackage
 
 
 $(MAIN): $(CLASS).o $(MAIN).o $(CLASS3).o $(CLASS2).o
