@@ -25,8 +25,6 @@ string CheckingAccount::getAccountHolder(){
 
 void CheckingAccount::setAccountHolder(string clientName){
 
-	//error checking?
-
 	accountHolder = clientName;
 }
 
@@ -36,8 +34,6 @@ string CheckingAccount::getCrewAffiliation(){
 }
 
 void CheckingAccount::setCrewAffiliation(string crewName){
-
-	//error checking?
 
 	crewAffiliation = crewName;
 }
