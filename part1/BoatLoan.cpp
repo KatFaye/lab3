@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <iostream>
 
-BoatLoan::BoatLoan(int bal, int paySched, int minBal, double pirRate, int newLootMax, int numCan, string newName, double payment) : BankAccount(bal, paySched, minBal, pirRate) {
+BoatLoan::BoatLoan(int bal, int paySched, double pirRate, int newLootMax, int numCan, string newName, double payment) : BankAccount(bal, paySched, pirRate) {
 
 	//initialize boat loan
 	setMaxLootStorage(newLootMax);

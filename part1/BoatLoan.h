@@ -10,7 +10,7 @@
 class BoatLoan : public BankAccount {
 
 public:
-	BoatLoan(int balance = 10000, int paymentSchedule = 1, int minimumBalance = 100, double pirateRate = 15, int maxLootStorage = 2000, int numOfCannons = 20, string boatName = "The Flying Dutchman", double Payment = 500);
+	BoatLoan(int balance = 10000, int paymentSchedule = 1, double pirateRate = 15, int maxLootStorage = 2000, int numOfCannons = 20, string boatName = "The Flying Dutchman", double Payment = 500);
 	virtual void print(); //prints status of boat, crew, and account
 	virtual void deposit(int Deposit); //put money towards paying off loan (besides regular payment)
 	void printLoanTable();

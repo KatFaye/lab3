@@ -11,7 +11,7 @@ using namespace std;
 
 class BankAccount {
 public:
-	BankAccount(int balance = 0, int paymentSchedule = 1, int minimumBalance = 100, double pirateRate = 15);
+	BankAccount(int balance = 0, int paymentSchedule = 1, int pirateRate = 15);
 	int getBalance();
 	void setBalance(int);
 
@@ -32,7 +32,6 @@ public:
 
 private:
 	int balance; //balance of account; recorded in dubloons
-	int minimumBalance; //dubloons
 	double pirateRate; //how much of your balance Blackbeard takes for security reasons
 	int paymentSchedule; //how often a payment is due (in months)
 };

@@ -8,16 +8,14 @@
  
 using namespace std; //adding this fixed the string problems
 
-BankAccount::BankAccount(int newBal, int paySchedule, int minBal, double newRate) { //constructor. make/initialize new bank account class object
+BankAccount::BankAccount(int newBal, int paySchedule, int newRate) { //constructor. make/initialize new bank account class object
 
 	//initialize account
 	setPaySchedule(paySchedule);
-	setMinimumBalance(minBal);
 	setPirateRate(newRate);
 	setBalance(newBal);
 }
 void BankAccount::setPaySchedule(int paySchedule) {
-	//error checking
 	paymentSchedule = paySchedule;
 
 }
@@ -31,29 +29,11 @@ int BankAccount::getBalance(){ //return current account balance
 
 void BankAccount::setBalance(int newBal){ //set account balance
 
-	//ensure that balance meets minimum balance requirement
-	while(newBal < minimumBalance){ 
-		cout << "Error: Insufficient funds to open an account with Blackbeard" << endl; //output error message
-		cout << "Please enter a new balance: "; // ask for valid balance
-		cin >> newBal; //read in new balance
-	} //end while
-
 	balance = newBal; //set account balance
 
 }
 
-int BankAccount::getMinimumBalance(){ //is this functions necessary?
 
-	return minimumBalance;
-
-}
-
-void BankAccount::setMinimumBalance(int minBal){
-
-	//error checking? there's a default value, but user-given values could still be invalid...
-	minimumBalance = minBal;
-
-}
 
 double BankAccount::getPirateRate(){ //return pirateRate
 
@@ -71,7 +51,7 @@ void BankAccount::setPirateRate(double newRate){ //set pirateRate variable of Ba
 	}
 
 	//set pirateRate
-	pirateRate = newRate; //how much of your balance Blackbeard takes for security reasons; quarterly charge
+	pirateRate = newRate; //how much of your balance Blackbeard takes for security reasons
 
 }
 

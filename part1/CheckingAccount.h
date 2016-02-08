@@ -11,7 +11,10 @@ using namespace std;
 class CheckingAccount : public BankAccount {
 	
 public:
-	CheckingAccount(string, string, int);
+	CheckingAccount(string accountHolder, string crewAffiliation, int balance, int minimumBalance = 500);
+
+	void setMinimumBalance(int);
+	int getMinimumBalance();
 	void setAccountHolder(string);
 	string getAccountHolder();
 
@@ -26,7 +29,7 @@ private:
 
 	string accountHolder;
 	string crewAffiliation; //pirates member associated with
-
+	int minimumBalance; //dubloons
 };
 
 #endif //_CHECKINGACCOUNT_H_
