@@ -4,9 +4,16 @@
 #include "Package.h"
 #include "TwoDayPackage.h"
 
-TwoDayPackage::TwoDayPackage(){
+TwoDayPackage::TwoDayPackage(string newName, int zipcode, double weight, double costPerOunce, double flatFee) : Package (newName, zipcode, weight, costPerOunce){
 
-
+	FlatFee = flatFee;
 }
 
-//also need refined CalculateCost function (how do you do this with inheritance?)
+double TwoDayPackage::CalculateCost(){ //calculate shipping cost
+
+	double weight = getWeight();
+	double cPO = getCostPerOunce();
+
+	return (weight * cPO + FlatFee); //return cost with flat fee factored in
+
+} 

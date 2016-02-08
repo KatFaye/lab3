@@ -3,16 +3,18 @@
 
 #include "Package.h"
 
+#ifndef O_PACKAGE_H 
+#define O_PACKAGE_H
+
 class OvernightPackage : public Package {
 
 public:
-	OvernightPackage();
-	//redefinte calculateCost to add additional cost to cost per ounce 
-	//Note: use base class's calculateCost function
+	OvernightPackage(string newName = "empty", int zipcode = 46556, double weight = 20.0, double costPerOunce = 1.25, double extraCostPerOunce = .50);
+	virtual double CalculateCost();
 
 private:
-	double extraCostPerOunce;
-
-	
+	double ExtraCostPerOunce;
 
 };
+
+#endif

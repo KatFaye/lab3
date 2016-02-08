@@ -4,15 +4,27 @@
 
 #include <string>
 #include <iostream>
+using namespace std;
+
+#ifndef PACKAGE_H 
+#define PACKAGE_H
 
 class Package {
 
 public:
-	Package();
+	Package(string newName = "empty", int zipcode = 46556, double weight = 20.0, double costPerOunce = 1.25);
+	virtual double CalculateCost();
+	virtual void print();
+	void setCost(double costPerOunce);
+	void setWeight(double weight);
+	double getWeight();
+	double getCostPerOunce();
 
 private:
-	string name;
-	int zipcode;
-	double weight; //in ounces //must error check to make non-negative
-	double costPerOunce;
+	string Name;
+	int Zipcode;
+	double Weight; //in ounces
+	double CostPerOunce; // in dollars
 };
+
+#endif

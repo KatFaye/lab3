@@ -3,13 +3,19 @@
 
 #include "Package.h"
 
+#ifndef TWO_D_PACKAGE_H 
+#define TWO_D_PACKAGE_H 
+
+
 class TwoDayPackage : public Package {
 	
 public:
-
-	//need refined calculateCost function to include flat rate
+	TwoDayPackage(string newName = "empty", int zipcode = 46556, double weight = 20.0, double costPerOunce = 1.25, double flatFee = 5.00);
+	virtual double CalculateCost();
 
 private:
-	double flatFee; //initialize in constructor
+	double FlatFee; //initialize in constructor
 
 };
+
+#endif
