@@ -12,7 +12,7 @@ OvernightPackage::OvernightPackage(string newName, int zipcode, double weight, d
 
 double OvernightPackage::CalculateCost(){
 
-	setCost(getCostPerOunce() + ExtraCostPerOunce);
-	double cost = Package::CalculateCost(); //i don't know if this is what they want... said to use Package's cost function
+	setCost(getCostPerOunce() + ExtraCostPerOunce); //adds extra charge
+	double cost = Package::CalculateCost(); 
 	return cost;
 }
