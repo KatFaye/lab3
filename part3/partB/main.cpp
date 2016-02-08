@@ -10,21 +10,19 @@ using namespace std;
 
 int main(){
 	
-	//instantiate three objects of different package types
-	Package pack1("Kate's Regular Package", 46556, 15, 2.50);
-	TwoDayPackage twoDayPack1("Kate's Two Day Package", 46556, 15, 2.50);
-	OvernightPackage overnightPack1("Kate's Overnight Package", 46556, 15, 2.50);
+	//instantiate 3 Two Day Packages
+	TwoDayPackage TPack1("Kat's Two Day Package", 46556, 15, 2.50), TPack2("Scott's Two Day Package", 46556, 20, 1.50), TPack3("Ramzi's Two Day Package", 46556, 18, 3.25);
+	//instantiate 3 Overnight Packages
+	OvernightPackage OPack1("Kate's Overnight Package", 46556, 15, 2.50), OPack2("Scotts's Overnight Package", 46556, 20, 1.50), OPack3("Ramzi's Overnight Package", 46556, 18, 3.25);
 
-	Package * ptr1 = &twoDayPack1, * ptr2 = &overnightPack1; //create base class pointers to derived class objects
+	//make array of package pointers
+	Package * PackageArray[6] = {&TPack1, &TPack2, &TPack3, &OPack1, &OPack2, &OPack3}; //create base class pointers to derived class objects
 
-	pack1.print();
-	ptr1 -> print(); //use base class's print function
-	ptr2 -> print(); //use base class's print function
+	for(int i = 0; i < 6; i++){
 
-	//Print final costs of all instantiated packages
-	cout << "Cost of a regular package: $" << setprecision(2) << fixed << pack1.CalculateCost() << endl;
-	cout << "Cost of a two day package: $" << setprecision(2) << fixed << twoDayPack1.CalculateCost() << endl;
-	cout << "Cost of an overnight package: $" << setprecision(2) << fixed << overnightPack1.CalculateCost() << endl;
+		cout << "The total cost of " << PackageArray[i] -> getName() << " is $" << fixed << setprecision(2) << (PackageArray[i] -> CalculateCost()) << endl;
+
+	}
 
 	return 0;
 }

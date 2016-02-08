@@ -56,3 +56,7 @@ double Package::CalculateCost(){
 	return (Weight * CostPerOunce);
 }
 
+string Package::getName(){
+
+	return Name;
+}
