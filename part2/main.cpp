@@ -2,6 +2,7 @@
 // Kat Herring and Kate Barlock
 
 #include <iostream>
+#include <iomanip>
 #include "TwoDayPackage.h"
 #include "OvernightPackage.h"
 
@@ -21,9 +22,9 @@ int main(){
 	ptr2 -> print(); //use base class's print function
 
 	//Print final costs of all instantiated packages
-	cout << "Cost of a regular package: $" << pack1.CalculateCost() << endl;
-	cout << "Cost of a two day package: $" << twoDayPack1.CalculateCost() << endl;
-	cout << "Cost of an overnight package: $" << overnightPack1.CalculateCost() << endl;
+	cout << "Cost of a regular package: $" << setprecision(2) << fixed << pack1.CalculateCost() << endl;
+	cout << "Cost of a two day package: $" << setprecision(2) << fixed << twoDayPack1.CalculateCost() << endl;
+	cout << "Cost of an overnight package: $" << setprecision(2) << fixed << overnightPack1.CalculateCost() << endl;
 
 	return 0;
 }

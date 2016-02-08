@@ -3,6 +3,7 @@
 
 #include "Package.h"
 #include <string>
+#include <iomanip>
 
 Package::Package(string newName, int zipcode, double weight, double costPerOunce){ //constructor
 
@@ -18,16 +19,16 @@ void Package::print(){
 	//print all package info to screen
 	cout << "***Package Stats***" << endl;
 	cout << "Name: " << Name << endl << "Zipcode: " << Zipcode << endl;
-	cout << "Weight: " << Weight << endl << "CostPerOunce: " << CostPerOunce << endl;
+	cout << "Weight: " << Weight << endl << "Cost per Ounce: $" <<  setprecision(2) << fixed << CostPerOunce << endl;
 	cout << "*******************" << endl << endl;
 }
 
 void Package::setCost(double costPerOunce){ //set cost of package (w/ error checking)
 
-	//while(costPerOunce <= 0){ //error checking. cost per ounce must be positive
-	//	cout << "Error! Cost/Ounce must be a positive quantity! Please input a valid Cost/Ounce: ";
-	//	cin >> costPerOunce;
-	//}
+	while(costPerOunce <= 0){ //error checking. cost per ounce must be positive
+		cout << "Error! Cost/Ounce must be a positive quantity! Please input a valid Cost/Ounce: ";
+		cin >> costPerOunce;
+	}
 	CostPerOunce = costPerOunce; //set cost per ounce
 }
 
